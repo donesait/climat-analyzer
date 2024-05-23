@@ -1,0 +1,25 @@
+<div class="weather-day" *ngIf="currentDay">
+    <div class="weather-short--info">
+        <img class="weather-icon" src="https://yastatic.net/weather/i/icons/funky/dark/{{currentDay.parts.day.icon}}.svg"
+             alt="weather-icon">
+        <p class="weather-comditional">{{ currentDay.parts.day.condition |formatConditional }}</p>
+    </div>
+
+    <div class="weather-detal--info">
+        <p class="cur--temp">Средняя температура: {{ currentDay.parts.day.temp_avg | formatTemp }}</p>
+        <p class="cur--temp last">Минимальная температура: {{ currentDay.parts.night.temp_min | formatTemp}}</p>
+
+        <div>
+            <h3 class="weather-ev-hour--title">Почасовой прогноз погоды:</h3>
+            <ul class="weather-ev-hour--list" *dayWeather="currentDay; let hoursWeather=weather">
+                <li class="weather-ev-hour--item" *ngFor="let hourWeather of hoursWeather; let i=index">
+                    <p class="time--hour">{{hourWeather.hour}}</p>
+                    <img class="weather-icon" src="https://yastatic.net/weather/i/icons/funky/dark/{{currentDay.parts.day.icon}}.svg"
+                         alt="weather-icon">
+                    <p>Температура: {{hourWeather.temp | formatTemp}}</p>
+                    <p>Скорость ветра: {{hourWeather.wind_speed}} м/c</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

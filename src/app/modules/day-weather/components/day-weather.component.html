@@ -1,0 +1,11 @@
+<section *formatDate="weatherDay; let weekDay=weekDay;">
+    <div class="weather-day" *ngIf="weatherDay">
+        <header class="weather-day--header">{{ weekDay }}</header>
+        <img class="weather-icon" src="https://yastatic.net/weather/i/icons/funky/dark/{{weatherDay.parts.day.icon}}.svg"
+             alt="weather-icon">
+        <p class="weather-comditional">{{ weatherDay.parts.day.condition |formatConditional }}</p>
+        <p class="weather-temperature">Средняя T: <span>{{ weatherDay.parts.day.temp_avg | formatTemp }}</span></p>
+        <p class="weather-temperature">Минимальная T: <span>{{ weatherDay.parts.night.temp_min | formatTemp }}</span></p>
+        <footer class="date">{{ weatherDay.date | date : 'dd.MM' }}</footer>
+    </div>
+</section>

@@ -1,0 +1,27 @@
+.weather-day {
+    width: 190px;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 250px;
+    //border: 2px #526ed3 solid;
+    justify-content: center;
+    border-radius: 15%;
+
+    .weather-icon {
+        border-bottom: 1px solid gray;
+        padding: 5px;
+        width: 100px;
+        height: 100px;
+    }
+    .weather-temperature {
+        font-size: 16px;
+    }
+    .weather-day--header {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28px;
+    }
+}

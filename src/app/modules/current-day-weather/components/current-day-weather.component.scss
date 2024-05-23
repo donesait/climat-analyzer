@@ -1,0 +1,66 @@
+.weather-day {
+    border-radius: 1%;
+    border: 2px #526ed3 solid;
+    display: flex;
+    height: 250px;
+    padding: 15px;
+
+
+    .weather-short--info {
+        margin-right: 50px;
+        margin-left: 20px;
+        text-align: center;
+        padding: 15px;
+        font-size: 18px;
+        flex-grow: 0;
+
+        .weather-icon {
+            height: 150px;
+            width: auto;
+            border-bottom: 1px gray solid;
+            margin-bottom: 5px;
+        }
+    }
+
+    .weather-detal--info {
+        text-align: center;
+        flex-grow: 1;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px;
+
+        .cur--temp {
+            font-size: 18px;
+        }
+
+        .last {
+            margin-bottom: 15px;
+        }
+
+        .weather-ev-hour--title {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .weather-ev-hour--list {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            .time--hour {
+                margin-bottom: 10px;
+            }
+
+            .weather-ev-hour--item {
+                margin-right: 10px;
+            }
+        }
+
+    }
+
+
+}

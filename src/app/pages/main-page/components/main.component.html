@@ -1,0 +1,34 @@
+<section class="app">
+
+    <form class="b-form" [formGroup]="_searchForm" (ngSubmit)="searchWeather()">
+        <tui-input formControlName="cityControl" style="width: 800px">
+            Введите город
+            <input
+                tuiTextfield
+            />
+        </tui-input>
+
+        <button tuiButton>Поиск</button>
+    </form>
+
+    <div class="current-day-wrapper" *ngIf="_currentDay">
+        <h2 class="current-date">
+            <span>Сегодня {{_currentDay.date | date : 'EEEE, dd.MM'}}</span>
+            <ng-container *ngIf="_weatherService.getGeoLocality() | async as city">
+                <span> {{city}}</span>
+            </ng-container>
+        </h2>
+
+        <app-current-day-weather [currentDay]="_currentDay"></app-current-day-weather>
+    </div>
+
+    <div class="weather-wrapper">
+        <h3>Прогноз на неделю:</h3>
+        <ul class="weather-list">
+            <li class="weather-item"  *ngFor="let day of _weatherService.getWeather() | async">
+                <app-day-weather [day]="day"></app-day-weather>
+            </li>
+        </ul>
+    </div>
+
+</section>
