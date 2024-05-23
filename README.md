@@ -1,8 +1,8 @@
 # Climate-Analyzer
 
-Weather forecast by enabled geolocation
-Obtaining weather forecast for the entered settlement
-Receive weather forecasts by week and by hour
+Weather forecast by enabled geolocation.
+Obtaining weather forecast for the entered settlement.
+Receive weather forecasts by week and by hour.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
